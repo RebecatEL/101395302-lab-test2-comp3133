@@ -1,0 +1,49 @@
+<h1>SpaceX Mission Details</h1>
+<div class="mission-details" *ngIf="mission">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+      <div class="mission-patch">
+        <img src="{{ mission.links.mission_patch_small }}" alt="Mission Patch" />
+      </div> 
+    </td>
+    <td>
+      <div class="mission-info">  
+        <h2>Mission - {{ mission.mission_name }}</h2>
+        <p>Name: {{mission.mission_name}}</p>
+        <p>Launch Year: {{ mission.launch_year }}</p>
+        <p>Launch Date: {{ mission.launch_date_utc | date }}</p>
+        <p>Details: {{ mission.details }}</p>
+        <br/>
+        <h2>Rocket</h2>
+        <p>Name: {{ mission.rocket.rocket_name }}</p>
+        <p>Type: {{ mission.rocket.rocket_type }}</p>
+        <br/>
+        <h2>Launch Site</h2>
+        <p>Name: {{ mission.launch_site.site_name_long }}</p>
+        <br/>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <div class="launch-details">
+        <h2>Launch Details</h2>
+        <p>{{mission.details}}</p>
+      </div>
+      </tr>
+      <br/>
+    <h2>More Info on Launch Details</h2>
+    <div class="social-icons">
+      <a [href]="mission.links.article_link">Article</a>
+      <a href={{mission.links.video_link}}>Video</a>
+      <a href={{mission.links.wikipedia}}>wikipedia</a>
+    </div> 
+  </tbody>
+  </table> 
+</div>
+  
+  <div class="mission-details" *ngIf="!mission">
+    <p>Loading mission details...</p>
+  </div>
+  

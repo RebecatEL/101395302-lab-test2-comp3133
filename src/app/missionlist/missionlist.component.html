@@ -1,0 +1,68 @@
+<style>
+    table, th , td  {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    table tr:nth-child(odd) {
+      background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+    .button-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button-container > div {
+  flex: 1 1 12.5%; /* Adjust this value to control the width of each button */
+  margin: 5px; /* Adjust this value to control the spacing between buttons */
+}
+
+.button-container button {
+  width: 100%;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div *ngIf="missions.length > 0">
+    <div>
+        <div><button (click)="showAll()">Show All</button></div>
+        <br/>
+        <h3>Filter by Launch Year</h3>
+        <div class="button-container">
+            <div *ngFor="let year of launchYears">
+              <button (click)="filterByYear(year)">{{ year }}</button>
+            </div>
+          </div>
+      </div>
+      <br/>
+    <table>
+      <thead>
+        <tr>
+          <th>Mission Name</th>
+          <th>Launch Year</th>
+          <th>Details</th>
+          <th>Mission Patch</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mission of filteredMissions">
+          <td>{{ mission.mission_name }}</td>
+          <td>{{ mission.launch_year }}</td>
+          <td>{{ mission.details }}</td>
+          <td>
+            <img [src]="mission.links.mission_patch_small" alt="Mission Patch" width="50">
+          </td>
+          <td>
+            <button [routerLink]="['/missiondetails', mission.flight_number]">View Details</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="missions.length === 0">
+    <p>No missions available.</p>
+  </div>
+
+  
