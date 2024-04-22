@@ -1,13 +1,19 @@
-# Lab Test 2
+# Angular application with data fetching from API
 
 ## Demo
 
 The webpage is deployed on Vercel: [Vercel](https://101395302-lab-test2-comp3133.vercel.app/)
 
-## Screen shots
+## Reference API:
+[SpaceX API](https://docs.spacexdata.com/#bc65ba60-decf-4289-bb04-4ca9df01b9c1)
+
+## Feature:
 
 ### Home
+- Show all missions
+- Filter missions by year
 ![Home](/assets/images/missionlist.png)
 
 ### Detail page
+- Show selected mission's details
 ![Detail page](/assets/images/missiondetail.png)
