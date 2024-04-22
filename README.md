@@ -2,7 +2,7 @@
 
 ## Demo
 
-The webpage is deployed on Vercel: [Vercel](https://101395302-lab-test2-comp3133.vercel.app/)
+The webpage is deployed on Vercel: [Vercel](https://angular-api-fetch.vercel.app/)
 
 ## Reference API:
 [SpaceX API](https://docs.spacexdata.com/#bc65ba60-decf-4289-bb04-4ca9df01b9c1)
